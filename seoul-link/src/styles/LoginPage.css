@@ -437,4 +437,117 @@ input {
     .login-card-header h2 {
         font-size: 28px;
     }
+
+    .login-error {
+        margin: 0;
+        padding: 10px 12px;
+        border-radius: 6px;
+        background: #fff0f0;
+        color: #d92d20;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+    }
+
+
+    .login-screen {
+        min-height: 100vh;
+        padding: 120px 80px 48px;
+        display: grid;
+        grid-template-columns: 1fr 474px;
+        align-items: center;
+        gap: 64px;
+    }
+
+    .login-intro {
+        color: white;
+        max-width: 680px;
+    }
+
+    .login-intro h1 {
+        margin: 0;
+        font-size: 68px;
+        line-height: 1.3;
+        font-weight: 800;
+        letter-spacing: 0;
+        text-shadow: 0 8px 28px rgba(0, 35, 80, 0.24);
+    }
+
+    .login-intro h1 span {
+        color: #64cfff;
+    }
+
+    .login-intro p {
+        margin: 36px 0 0;
+        font-size: 24px;
+        line-height: 1.75;
+        font-weight: 600;
+        text-shadow: 0 5px 20px rgba(0, 35, 80, 0.26);
+    }
+
+    .login-card {
+        width: 474px;
+        justify-self: center;
+    }
+
+    .signup-screen {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .signup-card {
+        margin-top: 24px;
+    }
+
+    .login-error {
+        margin: 16px 0 0;
+        padding: 10px 12px;
+        border-radius: 6px;
+        background: #fff0f0;
+        color: #d92d20;
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-wrap;
+    }
+
+    .input-box-with-button {
+        padding-right: 8px;
+    }
+
+    .input-box-with-button button {
+        flex: 0 0 auto;
+        height: 40px;
+        border: none;
+        border-radius: 8px;
+        padding: 0 12px;
+        background: #2f80ed;
+        color: white;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    @media (max-width: 980px) {
+        .login-screen {
+            grid-template-columns: 1fr;
+            padding: 112px 24px 40px;
+        }
+
+        .login-intro {
+            text-align: center;
+            justify-self: center;
+        }
+
+        .login-intro h1 {
+            font-size: 42px;
+        }
+
+        .login-intro p {
+            font-size: 18px;
+        }
+
+        .login-card {
+            width: min(100%, 474px);
+        }
+    }
 }

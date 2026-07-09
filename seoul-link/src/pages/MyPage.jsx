@@ -1,21 +1,29 @@
 import { useEffect, useState } from "react";
-import { getData } from "../api/client";
+import { apiGet } from "../api/client";
 
 function MyPage({ memberId }) {
     const [myPage, setMyPage] = useState(null);
+    const [message, setMessage] = useState("");
 
     useEffect(() => {
-        getData(`/mypage/${memberId}`)
+        apiGet(`/mypage/${memberId}`)
             .then(setMyPage)
-            .catch(() => {
-                alert("마이페이지 정보를 불러오지 못했습니다.");
+            .catch((error) => {
+                setMessage(error.message);
             });
     }, [memberId]);
+
+    const logout = () => {
+        localStorage.removeItem("member");
+        window.location.href = "/login";
+    };
 
     if (!myPage) {
         return (
             <main className="subPage">
-                <div className="loadingBox">마이페이지 불러오는 중...</div>
+                <div className="loadingBox">
+                    {message || "마이페이지를 불러오는 중입니다."}
+                </div>
             </main>
         );
     }
@@ -26,12 +34,16 @@ function MyPage({ memberId }) {
                 <span>MY SEOULINK</span>
                 <h1>마이페이지</h1>
                 <p>{myPage.member.nickname || myPage.member.name}님의 서울 여행 기록입니다.</p>
+                <button type="button" onClick={logout}>
+                    로그아웃
+                </button>
             </section>
 
             <section className="mySummary">
                 <div className="profileCard">
-                    <div className="profileIcon">👤</div>
+                    <div className="profileIcon">MY</div>
                     <h2>{myPage.member.name}</h2>
+                    <p>아이디: {myPage.member.loginId}</p>
                     <p>{myPage.member.email}</p>
                 </div>
 
@@ -100,13 +112,13 @@ function MyPage({ memberId }) {
 
             <section className="mySection">
                 <div className="sectionHead">
-                    <h2>AI 챗봇 대화 내역</h2>
+                    <h2>AI 챗봇 저장 내역</h2>
                     <span>{myPage.chatbotHistories.length}개</span>
                 </div>
 
                 <div className="listBox">
                     {myPage.chatbotHistories.length === 0 && (
-                        <div className="emptyLine">챗봇 대화 내역이 없습니다.</div>
+                        <div className="emptyLine">챗봇 저장 내역이 없습니다.</div>
                     )}
 
                     {myPage.chatbotHistories.map((chat) => (
