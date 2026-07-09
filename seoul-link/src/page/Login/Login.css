@@ -1,0 +1,155 @@
+.login-container {
+    width: 100%;
+    height: 100vh;
+
+    padding: 96px 100px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.login-card {
+    width: 420px;
+    padding: 32px 40px;
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.login-small {
+    margin: 0 0 16px;
+    color: #2f80ed;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.login-title {
+    margin: 0 0 36px;
+    color: #12335f;
+    font-size: 34px;
+    line-height: 1.25;
+    font-weight: 900;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+
+    border: 1px solid #d5deea;
+    border-radius: 12px;
+    outline: none;
+
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.login-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 8px 0 24px;
+    font-size: 13px;
+}
+
+.keep-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
+}
+
+.find-password {
+    border: none;
+    background: none;
+    color: #2f80ed;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.login-btn,
+.social-btn {
+    width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    border: none;
+
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: #2f80ed;
+    color: white;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 28px 0;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.social-btn {
+    margin-bottom: 12px;
+}
+
+.kakao {
+    background: #fee500;
+    color: #111;
+}
+
+.naver {
+    background: #03c75a;
+    color: white;
+}
+
+.google {
+    background: white;
+    color: #111;
+    border: 1px solid #d5deea;
+}
+
+.signup {
+    margin: 24px 0 0;
+    text-align: center;
+    color: #8a94a6;
+    font-size: 14px;
+}
+
+.signup span {
+    margin-left: 6px;
+    color: #2f80ed;
+    font-weight: 800;
+    cursor: pointer;
+}
