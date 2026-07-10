@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import MyPage from "./pages/MyPage";
 import "./App.css";
+import FindPasswordPage from "./pages/FindPasswordPage";
 
 function HomePage() {
     const savedMember = localStorage.getItem("member");
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
+                <Route path="/find-password" element={<FindPasswordPage />} />
             </Routes>
         </BrowserRouter>
     );
