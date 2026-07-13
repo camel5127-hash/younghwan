@@ -26,3 +26,15 @@ export async function apiPost(path, body) {
 
     return parseResponse(response);
 }
+
+export async function apiPut(path, body) {
+    const response = await fetch(`${BASE_URL}${path}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+    });
+
+    return parseResponse(response);
+}

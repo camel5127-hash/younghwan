@@ -31,6 +31,10 @@ public class Member {
     @Column(name = "STATUS", nullable = false, length = 20)
     private MemberStatus status;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "LOGIN_TYPE", nullable = false, length = 20)
+    private LoginType loginType;
+
     @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 
@@ -47,6 +51,24 @@ public class Member {
         this.nickname = nickname;
         this.phone = phone;
         this.status = MemberStatus.ACTIVE;
+        this.loginType = LoginType.LOCAL;
+    }
+
+    public Member(
+            String email,
+            String password,
+            String name,
+            String nickname,
+            String phone,
+            LoginType loginType
+    ) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.nickname = nickname;
+        this.phone = phone;
+        this.status = MemberStatus.ACTIVE;
+        this.loginType = loginType;
     }
 
     @PrePersist
@@ -58,6 +80,10 @@ public class Member {
 
         if (this.status == null) {
             this.status = MemberStatus.ACTIVE;
+        }
+
+        if (this.loginType == null) {
+            this.loginType = LoginType.LOCAL;
         }
     }
 
@@ -94,12 +120,28 @@ public class Member {
         return status;
     }
 
+    public LoginType getLoginType() {
+        return loginType;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public void updateProfile(String name, String nickname, String phone) {
+        this.name = name;
+        this.nickname = nickname;
+        this.phone = phone;
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public void changePassword(String password) {
+        this.password = password;
+        this.updatedAt = LocalDateTime.now();
     }
 
     public void withdraw() {

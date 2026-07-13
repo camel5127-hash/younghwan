@@ -113,15 +113,33 @@ export default function Login() {
                         <span>또는</span>
                     </div>
 
-                    <button className="social-btn kakao" type="button">
+                    <button
+                        className="social-btn kakao"
+                        type="button"
+                        onClick={() => {
+                            window.location.href = "http://localhost:8080/oauth2/authorization/kakao";
+                        }}
+                    >
                         카카오 로그인
                     </button>
 
-                    <button className="social-btn naver" type="button">
+                    <button
+                        className="social-btn naver"
+                        type="button"
+                        onClick={() => {
+                            window.location.href = "http://localhost:8080/oauth2/authorization/naver";
+                        }}
+                    >
                         네이버 로그인
                     </button>
 
-                    <button className="social-btn google" type="button">
+                    <button
+                        className="social-btn google"
+                        type="button"
+                        onClick={() => {
+                            window.location.href = "http://localhost:8080/oauth2/authorization/google";
+                        }}
+                    >
                         Google 로그인
                     </button>
 
